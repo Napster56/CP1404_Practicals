@@ -17,6 +17,6 @@ def main():
     name = get_name()
     num = int(input("Enter the number of letters to skip over?"))
     odd_name = name[:: num]
-    print("Every second letter of your name is: {}".format(odd_name))
+    print("Your name is: {}".format(odd_name))
 
 main()
