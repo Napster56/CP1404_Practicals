@@ -1,7 +1,6 @@
 """
-CP1404/CP5632 - Practical
-Random word generator - based on format of words
-(Another way to get just consonants would be to use string.ascii_lowercase (all letters) and remove the vowels)
+CP1404/CP5632 - Practical 03
+Random word generator - based on format of words using characters to represent vowels and/or consonants
 """
 
 import random
