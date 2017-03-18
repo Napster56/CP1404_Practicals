@@ -1,7 +1,7 @@
 import random
 
-max_increase = random.randint(0, 25)
-max_decrease = random.randint(0, 35)
+max_increase = random.randint(0, 12.5)
+max_decrease = random.randint(0, 15.5)
 MIN_PRICE = 0.01
 MAX_PRICE = 1000.0
 INITIAL_PRICE = 100.0
