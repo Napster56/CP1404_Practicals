@@ -4,7 +4,7 @@ characters user wants to skip.
 """
 
 
-def get_name():
+def get_name2():
     name = input("Enter your name: ")
     name = name.replace(" ", "")
     while name == "":
@@ -14,7 +14,7 @@ def get_name():
 
 
 def main():
-    name = get_name()
+    name = get_name2()
     num = int(input("Enter the number of letters to skip over?"))
     odd_name = name[:: num]
     print("Your name is: {}".format(odd_name))
