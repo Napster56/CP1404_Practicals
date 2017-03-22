@@ -8,7 +8,7 @@ UPPER_NUM = 127
 
 # Checks the number entered by user
 def valid_num(user_number):
-    while LOWER_NUM > user_number < UPPER_NUM:
+    while user_number < LOWER_NUM  or user_number > UPPER_NUM:
         print("Please enter a number between 33 and 127.")
         user_number = int(input("Enter a number between 33 and 127: "))
     return user_number

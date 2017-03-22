@@ -11,25 +11,29 @@ CONSONANTS = "bcdfghjklmnpqrstvwxyz"
 
 def is_valid_format(word_format):
     for letter in word_format:
-        if letter in "cv":
+        if "cv" in word_format:
             return True
         else:
+            print(word_format)
             return False
 
 
 def main():
     word_format = input("Enter your word format using 'C' for consonants and/or 'V' for vowels.")
-    if is_valid_format(word_format) is True:
-        word = ""
-        for kind in valid_format:
-            if kind == "c":
-                word += random.choice(CONSONANTS)
-            elif kind == "v":
-                word += random.choice(VOWELS)
-            else:
-                word += kind
-        print(word)
-    else:
-        print("Invalid word format. Enter a new format. ")
-        word_format = input("Enter your word format using 'C' for consonants and/or 'V' for vowels.")
+    word_format = word_format.lower()
+    result = is_valid_format(word_format)
+    while result is False:
+        print("Invalid word format.")
+        word_format = input("Enter your word format using ONLY 'C' for consonants and/or 'V' for vowels.")
+        result = is_valid_format(word_format)
+        print(result)
+    word = ""
+    for kind in word_format:
+        if kind == "c":
+            word += random.choice(CONSONANTS)
+        elif kind == "v":
+            word += random.choice(VOWELS)
+    print(word)
+
 main()
+
