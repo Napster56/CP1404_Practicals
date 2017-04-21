@@ -1,0 +1,19 @@
+BoxLayout:
+    orientation: 'vertical'
+    BoxLayout:
+        orientation: 'horizontal'
+        Button:
+            text: 'Convert m to km'
+            # the following line specifies the function in the app class to call when the button is pressed
+            on_press: app.handle_convert(int(input_number.text))
+        Label:
+            id: output_label
+            font_size: 48
+            color: (255,0,255,1)
+    TextInput:
+            id: input_number
+            text: '7'
+            font_size: 48
+            multiline: False
+    Label:
+        text: "Enter a number and press 'Square'"

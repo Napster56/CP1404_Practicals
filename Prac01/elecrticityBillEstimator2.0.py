@@ -21,6 +21,7 @@ def get_tariff():
         tariff = TARIFF_31
         return tariff
 
+
 def get_num(prompt):
     num = float(input(prompt))
     while num < 0:
