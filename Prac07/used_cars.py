@@ -12,10 +12,10 @@ def main():
     limo = Car('limo', 100)
     limo.add_fuel(20)
     limo.drive(115)
-    #print("fuel =", bus.fuel, limo.fuel)
-    #print("odo =", bus.odometer)
+    # print("fuel =", bus.fuel, limo.fuel)
+    # print("odo =", bus.odometer)
     print(bus)
-    ####print("{self.name} {self.fuel}, {self.odometer}".format(self=limo))
+    # print("{self.name} {self.fuel}, {self.odometer}".format(self=limo))
     print(limo)
 
 
