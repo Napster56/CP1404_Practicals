@@ -1,7 +1,7 @@
 """CP1404 Practical07 - Client code to use the ProgrammingLanguage class."""
 
 from Prac07.programminglanguage import ProgrammingLanguage
-
+from operator import itemgetter
 
 def main():
     ruby = ProgrammingLanguage("Ruby", "Dynamic", True, 1995)
@@ -10,15 +10,10 @@ def main():
     program_languages = [ruby, python, vb]
 
     # print(python)
-    dynamic_languages = []
-    print("The dynamically typed languages are: ")
-    for item in program_languages:
-        if item.is_dynamic() is True:
-            dynamic_languages.append(item)
-    for item, value in enumerate(dynamic_languages):
-        print(value[0])
-            # print(program_languages)
 
-    # [item for item in program_languages if is_dynamic(self) == True]
+    print("The dynamically typed languages are: ")
+    dynamic_list = [item for item in program_languages if item.is_dynamic() is True]
+    for item in dynamic_list:
+        print(item)  # TODO how to print name of item
 
 main()
