@@ -16,6 +16,6 @@ def main():
     print("The dynamically typed languages are: ")
 
     for item in dynamic_list:
-        print(item)  # TODO how to print only the name of item
+        print(item.name)  # how to print only the name of item
 
 main()

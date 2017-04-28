@@ -7,12 +7,12 @@ CP1404 Practical - Create a class for a programming language.
 class ProgrammingLanguage:
     """ProgrammingLanguage class - intermediate exercise."""
 
-    def __init__(self, name='', typing='Static', reflection='', year=0):
+    def __init__(self, name='', typing='Static', reflection='', year=0):  # attributes
         """Initialise a ProgrammingLanguage instance.
 
         fuel: float, one unit of fuel drives one kilometre
         """
-        self.name = name
+        self.name = name                # this is where the parameters are assigned to the attributes
         self.typing = typing
         self.reflection = reflection
         self.year = year

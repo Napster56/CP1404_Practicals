@@ -2,6 +2,7 @@
 CP1404 Prac07 - Create a class for guitars.
 """
 
+import datetime
 
 class Guitar:
     """Guitar class - intermediate exercise."""
@@ -14,11 +15,12 @@ class Guitar:
         self.cost = cost
 
     def get_age(self):
-        age = 2017 - int(self.year)
+        current_year = datetime.datetime.now().year
+        age = current_year - self.year
         return age
 
-    def is_vintage(self, age):
-        if age >= 50:
+    def is_vintage(self):
+        if self.get_age() >= 50:
             return True
         else:
             return False
