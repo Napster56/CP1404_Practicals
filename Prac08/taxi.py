@@ -1,6 +1,6 @@
 """
-CP1404/CP5632 Practical
-Car class
+CP1404 Practical 8 - Inheritance
+This program extends the Car class with inheritance by creating a Taxi class
 """
 
 
@@ -35,16 +35,18 @@ class Car:
 
 class Taxi(Car):
     """ specialised version of a Car that includes fare costs """
+    price_per_km = 1.20
 
-    def __init__(self, name, fuel, price_per_km):
+    def __init__(self, name, fuel):
         """ initialise a Taxi instance, based on parent class Car """
         super().__init__(name, fuel)
-        self.price_per_km = price_per_km
         self.current_fare_distance = 0
 
     def __str__(self):
-        """ return a string representation like a car but with current fare distance"""
-        return "{}, {}km on current fare, ${:.2f}/km".format(super().__str__(), self.current_fare_distance, self.price_per_km)
+        """ return a string representation like a car but with current fare distance
+            Taxi.price_per_km is a class variable of Taxi class """
+        return "{}, The total cost for a {}km journey @ ${:.2f}/km is ${:.2f}".format(super().__str__(),
+                self.current_fare_distance, self.price_per_km, self.get_fare())
 
     def get_fare(self):
         """ get the price for the taxi trip """
