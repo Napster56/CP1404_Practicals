@@ -10,7 +10,7 @@ MENU_CHOICES = ["c", "d", "q"]
 
 
 def display_menu():
-    print("Let's drive!\nq)uit, c)hoose taxi, d)rive")
+    print("q)uit, c)hoose taxi, d)rive")
 
 
 def get_choice():
@@ -28,32 +28,45 @@ def display_taxi_list(taxis):
         print(i, taxi)
 
 
-def get_distance():
+def get_distance(my_taxi):
     distance = int(input("Drive how far?"))
-    return distance
+    my_taxi.drive(distance)
 
 
-def choose_taxi(my_bill):
+def choose_taxi(my_bill, taxis):
     my_taxi = int(input("Choose taxi: "))
     if my_taxi == 0:
+        my_taxi = taxis[0]
         print("Bill to date: ${:.2f}".format(my_bill))
+        get_distance(my_taxi)
+        calculate_bill(my_taxi)
     elif my_taxi == 1:
+        my_taxi = taxis[1]
         print("Bill to date: ${:.2f}".format(my_bill))
+        get_distance(my_taxi)
+        calculate_bill(my_taxi)
     else:
+        my_taxi = taxis[2]
         print("Bill to date: ${:.2f}".format(my_bill))
-    return my_taxi
+        get_distance(my_taxi)
+        calculate_bill(my_taxi)
+
 
 
 def calculate_bill(my_taxi):
-    my_bill = 0
-    return my_bill
+    my_bill = my_taxi.get_fare()
+    print("Your {} trip cost you ${:.2f}".format(my_taxi.name, my_bill))
+    print("Bill to date: ${}".format(my_bill))
+    display_menu()
+    get_choice()
 
 
 def process_menu_selection(choice, taxis):
     while choice != "q":
         if choice == "c":
+            my_bill = 0
             display_taxi_list(taxis)
-            choose_taxi(my_bill=0)
+            choose_taxi(my_bill, taxis)
         elif choice == "d":
             trip_distance = get_distance()
             return trip_distance
@@ -63,9 +76,11 @@ def process_menu_selection(choice, taxis):
 
 def main():
     taxis = [Taxi("Prius", 100), SilverServiceTaxi("Limo", 100, 2), SilverServiceTaxi("Hummer", 200, 4)]
+    print("Let's drive!")
     display_menu()
     choice = get_choice()
-    process_menu_selection(choice, taxis)
+    my_taxi = process_menu_selection(choice, taxis)
+    calculate_bill(my_taxi)
 
 
 main()
