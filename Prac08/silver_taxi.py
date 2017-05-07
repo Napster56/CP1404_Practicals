@@ -1,6 +1,7 @@
 """
 CP1404 Practical 8 - Inheritance
-This program extends the Car class with inheritance by creating a Taxi class
+This program extends the Taxi class with inheritance by creating a SilverServiceTaxi class which includes
+an attribute for fanciness which adds a premium to price_per_km 
 """
 
 from taxi import Taxi
