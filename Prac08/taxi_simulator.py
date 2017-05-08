@@ -73,6 +73,7 @@ def main():
             my_taxi = choose_taxi(my_taxi, taxis)
             choice = get_choice()
         elif choice == "d":
+            my_taxi.start_fare()
             get_distance(my_taxi)
             calculate_bill(my_taxi)
             total_bill = calculate_total_bill(my_taxi, total_bill)
