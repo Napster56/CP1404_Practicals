@@ -7,7 +7,7 @@ File and class example - opens/reads a file, stores in objects of custom class
 import csv
 from collections import namedtuple
 
-from Prac08.programming_language import ProgrammingLanguage
+from programming_language import ProgrammingLanguage
 
 __author__ = 'Lindsay Ward'
 
@@ -46,6 +46,7 @@ def main():
     for language in languages:
         print(language)
 
+
 main()
 
 
@@ -59,6 +60,7 @@ def using_csv():
         print(row)
 
     in_file.close()
+
 
 # using_csv()
 
@@ -76,6 +78,7 @@ def using_namedtuple():
         print(repr(language))
     in_file.close()
 
+
 # using_namedtuple()
 
 
@@ -88,5 +91,3 @@ def using_csv_namedtuple():
         print(repr(language))
 
 # using_csv_namedtuple()
-
-
